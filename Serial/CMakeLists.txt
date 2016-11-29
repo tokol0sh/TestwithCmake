@@ -11,7 +11,7 @@ else()
 endif()
 
 ## Add serial library
-add_library(serial ${serial_SRCS})
+add_library(serial STATIC ${serial_SRCS})
 if(UNIX AND NOT APPLE)
     target_link_libraries(serial rt)
 endif()
