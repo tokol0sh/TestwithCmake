@@ -12,11 +12,12 @@ int main(int argc, char** argv) {
 		}
 		else {
 			SerialPort.read(buffer);
+			if (buffer.back() == 65)
+				break;
+
 			SerialPort.write(buffer);
 		}
 	}
 	
 	return 0;
-
-	
 }
