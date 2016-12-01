@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <iostream>
 #include "Serial/serial.h"
 
 int main(int argc, char** argv) {
@@ -8,11 +9,14 @@ int main(int argc, char** argv) {
 	serial::Serial SerialPort("COM2", 115200, serial::Timeout::simpleTimeout(1000));
 	while (1) {
 		if (!SerialPort.available()) {
-			printf("No data\n");
 		}
 		else {
-			SerialPort.read(buffer, 1);
+			SerialPort.read(buffer);
+			SerialPort.write(buffer);
 		}
 	}
+	
 	return 0;
+
+	
 }
