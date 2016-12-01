@@ -7,6 +7,6 @@ add_subdirectory(SFML-2.4.1)
 include_directories(SFML-2.4.1/include)
 add_subdirectory(Serial)
 include_directories(Serial/include)
-add_executable(tut01 src/main.cpp src/graph.cpp src/graph.h)
+add_executable(tut01 src/main.cpp src/graph.cpp src/graph.h src/motor.hpp)
 
 target_link_libraries(tut01 sfml-system sfml-window sfml-graphics serial)
