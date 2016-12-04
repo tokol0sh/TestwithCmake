@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
 		else {
 			SerialPort.read(buffer);
 			SerialPort.write(buffer);
-			if (buffer.size() > 208) {
-				memcpy(&RA_motor, &buffer[0], sizeof(buffer));
+			if (buffer.size() > sizeof(RA_motor)) {
+   				memcpy(&RA_motor, &buffer[0], sizeof(buffer));
 				std::cout << "something from motorstruct: " << RA_motor.Flag_enableForceAngle << std::endl;
 				buffer.clear();
 			}
